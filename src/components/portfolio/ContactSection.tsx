@@ -55,6 +55,7 @@ const ContactSection = () => {
         description: "Thanks! I'll get back to you soon.",
       });
       setName("");
+      setSubject("");
       setEmail("");
       setMessage("");
       formRef.current.reset();
@@ -111,7 +112,7 @@ const ContactSection = () => {
                     </Label>
                     <Input
                       id="subject"
-                      name="subject"
+                      name="subject_line"
                       type="text"
                       value={subject}
                       onChange={(e) => setSubject(e.target.value)}
