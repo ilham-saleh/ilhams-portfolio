@@ -12,6 +12,7 @@ import { getEmailJSConfig } from "@/lib/env";
 
 const ContactSection = () => {
   const [name, setName] = useState("");
+  const [subject, setSubject] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [success, setSuccess] = useState(false);
@@ -39,9 +40,14 @@ const ContactSection = () => {
         return;
       }
 
-      await emailjs.sendForm(config.serviceId, config.templateId, formRef.current, {
-        publicKey: config.publicKey,
-      });
+      await emailjs.sendForm(
+        config.serviceId,
+        config.templateId,
+        formRef.current,
+        {
+          publicKey: config.publicKey,
+        }
+      );
 
       setSuccess(true);
       toast({
@@ -67,7 +73,7 @@ const ContactSection = () => {
 
   return (
     <section id="contact" className="min-h-screen py-24 px-4 flex items-center">
-<div className="container mx-auto max-w-6xl">
+      <div className="container mx-auto max-w-6xl">
         <Reveal>
           <h2 className="section-title text-center">Contact Me</h2>
         </Reveal>
@@ -85,7 +91,9 @@ const ContactSection = () => {
               <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <Label htmlFor="name" className="text-foreground/80">Name</Label>
+                    <Label htmlFor="name" className="text-foreground/80">
+                      Name
+                    </Label>
                     <Input
                       id="name"
                       name="user_username"
@@ -98,7 +106,24 @@ const ContactSection = () => {
                     />
                   </div>
                   <div>
-                    <Label htmlFor="email" className="text-foreground/80">Email</Label>
+                    <Label htmlFor="name" className="text-foreground/80">
+                      Subject
+                    </Label>
+                    <Input
+                      id="subject"
+                      name="subject"
+                      type="text"
+                      value={subject}
+                      onChange={(e) => setSubject(e.target.value)}
+                      placeholder="Subject"
+                      className="mt-2 focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:border-primary/40"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="email" className="text-foreground/80">
+                      Email
+                    </Label>
                     <Input
                       id="email"
                       name="user_email"
@@ -112,7 +137,9 @@ const ContactSection = () => {
                   </div>
                 </div>
                 <div>
-                  <Label htmlFor="message" className="text-foreground/80">Message</Label>
+                  <Label htmlFor="message" className="text-foreground/80">
+                    Message
+                  </Label>
                   <Textarea
                     id="message"
                     name="user_message"
@@ -131,19 +158,33 @@ const ContactSection = () => {
                 <input type="hidden" name="from_email" value={email} />
                 <input type="hidden" name="message" value={message} />
 
-                <Button 
-                  type="submit" 
+                <Button
+                  type="submit"
                   disabled={isLoading}
                   className="w-full neobrutalist-button neobrutalist-button-primary inline-flex items-center justify-center gap-2 text-base py-6"
                 >
-                  <span className="relative z-10">{isLoading ? "Sending..." : "Send Message"}</span>
+                  <span className="relative z-10">
+                    {isLoading ? "Sending..." : "Send Message"}
+                  </span>
                   {!isLoading && <Send size={18} className="relative z-10" />}
                 </Button>
                 {success && (
-                  <p role="status" aria-live="polite" className="text-sm mt-2 rounded-md border border-green-500/30 bg-green-500/10 text-green-400 px-3 py-2">Your message has been sent!</p>
+                  <p
+                    role="status"
+                    aria-live="polite"
+                    className="text-sm mt-2 rounded-md border border-green-500/30 bg-green-500/10 text-green-400 px-3 py-2"
+                  >
+                    Your message has been sent!
+                  </p>
                 )}
                 {error && (
-                  <p role="status" aria-live="polite" className="text-sm mt-2 rounded-md border border-red-500/30 bg-red-500/10 text-red-400 px-3 py-2">Something went wrong. Please try again.</p>
+                  <p
+                    role="status"
+                    aria-live="polite"
+                    className="text-sm mt-2 rounded-md border border-red-500/30 bg-red-500/10 text-red-400 px-3 py-2"
+                  >
+                    Something went wrong. Please try again.
+                  </p>
                 )}
               </form>
             </div>
