@@ -66,9 +66,9 @@ const HeroSection = ({ onSectionClick }: HeroSectionProps) => {
 
             <Reveal delay={0.15}>
               <div className="max-w-2xl mx-auto md:mx-0">
-                <p className="text-lg leading-relaxed text-foreground/80">
-                  Software Engineer focused on frontend, product thinking, and
-                  real users.
+                <p className="text-xl md:text-2xl leading-snug text-foreground/80">
+                  Software engineer building full-stack products real users care
+                  about.
                 </p>
               </div>
             </Reveal>
