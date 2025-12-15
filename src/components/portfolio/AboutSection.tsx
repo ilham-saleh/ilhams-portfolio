@@ -19,8 +19,8 @@ const AboutSection = () => {
   const interests = [
     { icon: Brain, label: "Continuous Learning", color: "primary" },
     { icon: Bike, label: "Cycling", color: "secondary" },
-    { icon: Music, label: "Music", color: "primary" },
-    { icon: Wrench, label: "Crafting", color: "secondary" },
+    // { icon: Music, label: "Music", color: "primary" },
+    // { icon: Wrench, label: "Crafting", color: "secondary" },
     { icon: Lightbulb, label: "Problem Solving", color: "primary" },
     { icon: Users, label: "Team Leadership", color: "secondary" },
     { icon: Heart, label: "Mentoring", color: "primary" },
@@ -32,7 +32,7 @@ const AboutSection = () => {
       <div className="container mx-auto max-w-7xl 3xl:px-12 4xl:px-16">
         <Reveal>
           <h2 className="section-title text-center mb-4">About Me</h2>
-          <p className="text-center text-foreground/60 max-w-2xl mx-auto mb-16">
+          <p className="text-center text-foreground/60 max-w-2xl mx-auto mb-16 text-base md:text-lg lg:text-xl">
             Crafting digital experiences with passion and precision
           </p>
         </Reveal>
@@ -49,7 +49,7 @@ const AboutSection = () => {
                   />
                   Who I Am
                 </h3>
-                <p className="text-foreground/80 leading-relaxed">
+                <p className="text-foreground/80 leading-relaxed text-base md:text-lg lg:text-xl">
                   I'm a passionate software developer specializing in crafting
                   engaging web applications and immersive gaming experiences.
                   Let's build something amazing together!
@@ -95,7 +95,7 @@ const AboutSection = () => {
                   />
                   Beyond Code
                 </h3>
-                <div className="grid grid-cols-2 3xl:grid-cols-3 4xl:grid-cols-4 gap-3">
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                   {interests.map((interest, index) => {
                     const Icon = interest.icon;
                     return (
