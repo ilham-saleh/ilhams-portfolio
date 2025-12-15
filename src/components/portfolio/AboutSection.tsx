@@ -49,7 +49,7 @@ const AboutSection = () => {
                   />
                   Who I Am
                 </h3>
-                <p className="text-foreground/80 leading-relaxed text-base md:text-lg lg:text-xl">
+                <p className="text-foreground/80 leading-relaxed">
                   I'm a passionate software developer specializing in crafting
                   engaging web applications and immersive gaming experiences.
                   Let's build something amazing together!
@@ -75,7 +75,7 @@ const AboutSection = () => {
                     Government Polytechnic Mumbai
                   </p>
                   <div className="flex items-center gap-2 mt-2">
-                    <span className="stat-badge text-xs">91.52% SCORE</span>
+                    <span className="stat-badge text-md">91.52% SCORE</span>
                   </div>
                   <p className="text-foreground/80 text-sm mt-3 leading-relaxed">
                     Focused on web development, programming, and database
@@ -112,7 +112,7 @@ const AboutSection = () => {
                             className={`text-${interest.color}`}
                           />
                         </div>
-                        <span className="text-sm font-medium text-foreground/80 group-hover/item:text-foreground">
+                        <span className="text-md text-foreground/80 group-hover/item:text-foreground">
                           {interest.label}
                         </span>
                       </div>
