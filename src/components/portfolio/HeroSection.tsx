@@ -54,7 +54,7 @@ const HeroSection = ({ onSectionClick }: HeroSectionProps) => {
 
             <Reveal delay={0.05}>
               <h1 className="text-hero font-black text-foreground mb-4">
-                Yash Palav
+                Ilham Saleh
               </h1>
             </Reveal>
 
@@ -67,7 +67,8 @@ const HeroSection = ({ onSectionClick }: HeroSectionProps) => {
             <Reveal delay={0.15}>
               <div className="max-w-2xl mx-auto md:mx-0">
                 <p className="text-lg leading-relaxed text-foreground/80">
-                  I'm a web developer who treats every project like a new game level to conquer blending speed, strategy, and creativity to build experiences that stand out. With a strong foundation in modern web technologies, I love crafting immersive web experiences, often experimenting with 3D models in Blender and integrating them into interactive UIs.
+                  Software Engineer focused on frontend, product thinking, and
+                  real users.
                 </p>
               </div>
             </Reveal>
@@ -92,19 +93,25 @@ const HeroSection = ({ onSectionClick }: HeroSectionProps) => {
 
           <Reveal delay={0.25}>
             <div className="flex items-center justify-center">
-              <Lottie animationData={heroAnimationData} loop={true} className="w-full h-auto max-w-xl 3xl:max-w-2xl 4xl:max-w-3xl" />
+              <Lottie
+                animationData={heroAnimationData}
+                loop={true}
+                className="w-full h-auto max-w-xl 3xl:max-w-2xl 4xl:max-w-3xl"
+              />
             </div>
           </Reveal>
         </div>
       </div>
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20">
-        <div className="flex flex-col items-center space-y-2 animate-float cursor-pointer" onClick={() => onSectionClick("about")}>
-          <span className="text-primary font-mono text-sm tracking-wider uppercase">Scroll</span>
-          <ChevronDown
-            size={24}
-            className="text-primary"
-          />
+        <div
+          className="flex flex-col items-center space-y-2 animate-float cursor-pointer"
+          onClick={() => onSectionClick("about")}
+        >
+          <span className="text-primary font-mono text-sm tracking-wider uppercase">
+            Scroll
+          </span>
+          <ChevronDown size={24} className="text-primary" />
         </div>
       </div>
     </section>
