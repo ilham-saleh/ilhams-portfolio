@@ -1,25 +1,25 @@
-import { Github, Linkedin, Instagram, Twitter } from "lucide-react";
+import { Github, Linkedin, Instagram, Mail, Twitter } from "lucide-react";
 
 export const SOCIAL_LINKS = [
-  { 
-    icon: Github, 
-    href: "https://github.com/YashPalav-26", 
-    label: "GitHub" 
+  {
+    icon: Github,
+    href: "https://github.com/ilham-saleh",
+    label: "GitHub",
   },
-  { 
-    icon: Linkedin, 
-    href: "https://linkedin.com/in/yashpalav/", 
-    label: "LinkedIn" 
+  {
+    icon: Linkedin,
+    href: "https://www.linkedin.com/in/ilham-saleh-430289218/",
+    label: "LinkedIn",
   },
-  { 
-    icon: Instagram, 
-    href: "https://www.instagram.com/_highkeyyash_/", 
-    label: "Instagram" 
+  {
+    icon: Mail,
+    href: "mailto:ilham2saleh@gmail.com",
+    label: "Email",
   },
-  { 
-    icon: Twitter, 
-    href: "https://x.com/yashpalav26", 
-    label: "Twitter" 
+  {
+    icon: Twitter,
+    href: "https://x.com",
+    label: "Twitter",
   },
 ] as const;
 
@@ -31,8 +31,15 @@ export const NAV_ITEMS = [
   { id: "contact", label: "Contact" },
 ] as const;
 
-export const SECTIONS = ["hero", "about", "skills", "experience", "projects", "contact"] as const;
+export const SECTIONS = [
+  "hero",
+  "about",
+  "skills",
+  "experience",
+  "projects",
+  "contact",
+] as const;
 
-export const EMAIL = "yashpalav48@gmail.com";
+export const EMAIL = "ilham2saleh@gmail.com";
 
 export const MOBILE_BREAKPOINT = 768;
