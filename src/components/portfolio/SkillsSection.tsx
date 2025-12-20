@@ -133,7 +133,7 @@ const SkillsSection = () => {
 
         <Reveal>
           <div
-            className="skills-shell mt-16 p-8 relative min-h-[600px] overflow-hidden bg-background
+            className="skills-shell mt-16 p-8 relative min-h-[500px] overflow-hidden bg-background
               border border-white/10"
           >
             <div className="absolute inset-0 bg-background backdrop-blur-[1px] z-0" />
