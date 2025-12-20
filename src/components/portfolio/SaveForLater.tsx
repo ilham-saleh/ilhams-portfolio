@@ -12,10 +12,10 @@
                 </h3>
                 <div className="space-y-2">
                   <p className="text-foreground font-semibold">
-                    Diploma in Information Technology
+                    Diploma in Computer Science 
                   </p>
                   <p className="text-foreground/70">
-                    Government Polytechnic Mumbai
+                    University of East London, 2019 - 2021
                   </p>
                   <div className="flex items-center gap-2 mt-2">
                     <span className="stat-badge text-md">91.52% SCORE</span>
