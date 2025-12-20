@@ -33,7 +33,8 @@ const ResumeViewer: React.FC = () => {
               <AlertCircle size={48} className="text-destructive" />
               <h3 className="text-xl font-bold">Failed to Load Resume</h3>
               <p className="text-foreground/80">
-                The PDF viewer couldn't load the resume. Please try downloading it using the button above.
+                The PDF viewer couldn't load the resume. Please try downloading
+                it using the button above.
               </p>
             </div>
           ) : (
@@ -44,8 +45,11 @@ const ResumeViewer: React.FC = () => {
               onError={() => setLoadError(true)}
             >
               <p className="p-4">
-                Your browser does not support PDFs. 
-                <a href={src} className="text-primary underline">Download the PDF</a> to view it.
+                Your browser does not support PDFs.
+                <a href={src} className="text-primary underline">
+                  Download the PDF
+                </a>{" "}
+                to view it.
               </p>
             </iframe>
           )}
