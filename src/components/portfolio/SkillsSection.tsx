@@ -27,10 +27,15 @@ import {
   SiVite,
   SiPostman,
   SiBruno,
-  SiBun
+  SiBun,
+  SiChakraui,
 } from "react-icons/si";
 import { TbBrandVercel } from "react-icons/tb";
-import { Reveal, FadeInStagger, FadeInItem } from "@/components/animations/Reveal";
+import {
+  Reveal,
+  FadeInStagger,
+  FadeInItem,
+} from "@/components/animations/Reveal";
 import { useTheme } from "@/contexts/ThemeContext";
 import DotGrid from "@/components/animations/DotGrid";
 
@@ -64,6 +69,7 @@ const BRAND_COLORS: Record<string, string> = {
   Bruno: "#FFC50F",
   Vercel: "#FFFFFF",
   Blender: "#F5792A",
+  ChakraUI: "#4FD1C5",
 };
 
 function alpha(hex: string, a: number) {
@@ -84,27 +90,28 @@ const skills = [
   { name: "Redux", icon: SiRedux },
   { name: "React Router", icon: SiReactrouter },
   { name: "Next.js", icon: SiNextdotjs },
-  { name: "Three.js", icon: SiThreedotjs },
+  // { name: "Three.js", icon: SiThreedotjs },
   { name: "Node.js", icon: SiNodedotjs },
   { name: "Express.js", icon: SiExpress },
   { name: "Bootstrap", icon: SiBootstrap },
   { name: "Tailwind CSS", icon: SiTailwindcss },
   { name: "DaisyUI", icon: SiDaisyui },
-  { name: "Java", icon: SiOpenjdk },
-  { name: "C", icon: SiC },
-  { name: "C++", icon: SiCplusplus },
+  { name: "ChakraUI", icon: SiChakraui },
+  // { name: "Java", icon: SiOpenjdk },
+  // { name: "C", icon: SiC },
+  // { name: "C++", icon: SiCplusplus },
   { name: "Python", icon: SiPython },
-  { name: "Mongoose", icon: SiMongoose },
-  { name: "MongoDB", icon: SiMongodb },
+  // { name: "Mongoose", icon: SiMongoose },
+  // { name: "MongoDB", icon: SiMongodb },
   { name: "MySQL", icon: SiMysql },
   { name: "Git", icon: SiGit },
   { name: "GitHub", icon: SiGithub },
   { name: "Vite", icon: SiVite },
-  { name: "Bun", icon: SiBun },
+  // { name: "Bun", icon: SiBun },
   { name: "Postman", icon: SiPostman },
-  { name: "Bruno", icon: SiBruno },
+  // { name: "Bruno", icon: SiBruno },
   { name: "Vercel", icon: TbBrandVercel },
-  { name: "Blender", icon: SiBlender },
+  // { name: "Blender", icon: SiBlender },
 ];
 
 const SkillsSection = () => {
@@ -118,8 +125,9 @@ const SkillsSection = () => {
         </Reveal>
 
         <Reveal>
-          <p className="text-center text-foreground/70 max-w-2xl mx-auto mt-2">
-            A collection of technologies and tools I'm proficient in, constantly learning and improving.
+          <p className="text-center text-foreground/70 max-w-2xl mx-auto mt-2 text-base md:text-lg lg:text-xl">
+            A collection of technologies and tools I'm proficient in, constantly
+            learning and improving.
           </p>
         </Reveal>
 
@@ -151,7 +159,11 @@ const SkillsSection = () => {
                   const IconComponent = skill.icon;
                   const color = BRAND_COLORS[skill.name] || "currentColor";
                   const isWhiteBrand = color === "#FFFFFF";
-                  const iconColor = isWhiteBrand ? (theme === "light" ? "#1e293b" : "#e2e8f0") : color;
+                  const iconColor = isWhiteBrand
+                    ? theme === "light"
+                      ? "#1e293b"
+                      : "#e2e8f0"
+                    : color;
 
                   return (
                     <FadeInItem
@@ -169,18 +181,29 @@ const SkillsSection = () => {
                           )}
                           style={{
                             background: !isWhiteBrand
-                              ? `linear-gradient(135deg, ${alpha(color, 0.22)}, ${alpha("#000000", 0)})`
+                              ? `linear-gradient(135deg, ${alpha(
+                                  color,
+                                  0.22
+                                )}, ${alpha("#000000", 0)})`
                               : undefined,
-                            boxShadow: !isWhiteBrand ? `0 0 0 1px ${alpha(color, 0.45)}` : undefined,
+                            boxShadow: !isWhiteBrand
+                              ? `0 0 0 1px ${alpha(color, 0.45)}`
+                              : undefined,
                           }}
                         >
-                          <IconComponent className="w-6 h-6" style={{ color: iconColor }} />
+                          <IconComponent
+                            className="w-6 h-6"
+                            style={{ color: iconColor }}
+                          />
                         </div>
 
                         <span
                           className="pointer-events-none absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"
                           style={{
-                            background: `radial-gradient(120px 60px at 20% 0%, ${alpha(color, 0.18)}, transparent 60%)`,
+                            background: `radial-gradient(120px 60px at 20% 0%, ${alpha(
+                              color,
+                              0.18
+                            )}, transparent 60%)`,
                           }}
                         />
                       </div>
